@@ -95,6 +95,8 @@ export default function HomePage() {
         <PlaceholderImage 
             text="Eucalyptus wood products"
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" 
+            width={1280}
+            height={720}
                    
             />
         </div>
