@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { ChevronRight, Menu, X } from 'lucide-react'
-import Image from 'next/image'
+//import Image from 'next/image'
 import Link from 'next/link'
-import type { NextPage } from 'next'
+//import type { NextPage } from 'next'
 import PlaceholderImage from './components/PlaceholderImage'
 
 export default function HomePage() {
