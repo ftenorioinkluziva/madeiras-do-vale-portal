@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 //import Image from 'next/image'
 //import Link from 'next/link'
 
@@ -24,7 +24,7 @@ export default function AboutPage() {
               Madeiras do Vale: Your Trusted Wood Partner
             </p>
             <p className="mt-4 max-w-2xl text-xl text-brand-green-dark lg:mx-auto">
-              With over two decades of experience, we've been at the forefront of sustainable eucalyptus wood solutions.
+              With over two decades of experience, we ve been at the forefront of sustainable eucalyptus wood solutions.
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export default function AboutPage() {
                   <p className="ml-16 text-lg leading-6 font-medium text-brand-green-dark">Customer Support</p>
                 </dt>
                 <dd className="mt-2 ml-16 text-base text-gray-500">
-                  Our dedicated team of experts is always ready to provide guidance and support, ensuring your project's success from start to finish.
+                  Our dedicated team of experts is always ready to provide guidance and support, ensuring your projects success from start to finish.
                 </dd>
               </div>
             </dl>

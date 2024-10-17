@@ -1,6 +1,6 @@
-//import Image from 'next/image'
-import Link from 'next/link'
-import PlaceholderImage from '../components/PlaceholderImage'
+//import Image from "next/image"
+import Link from "next/link"
+import PlaceholderImage from "../components/PlaceholderImage"
 
 // Define an interface for the product type
 interface Product {
@@ -13,34 +13,34 @@ export default function ProductsPage() {
   // Updated product array with image paths
   const products: Product[] = [
     {
-      name: 'Treated Eucalyptus Lumber',
-      description: 'High-quality treated eucalyptus lumber for construction projects.',
-      image: 'treated-lumber',
+      name: "Treated Eucalyptus Lumber",
+      description: "High-quality treated eucalyptus lumber for construction projects.",
+      image: "treated-lumber",
     },
     {
-      name: 'Landscaping Timbers',
-      description: 'Durable eucalyptus timbers perfect for garden and landscape design.',
-      image: '/images/landscaping-timbers.jpg',
+      name: "Landscaping Timbers",
+      description: "Durable eucalyptus timbers perfect for garden and landscape design.",
+      image: "/images/landscaping-timbers.jpg",
     },
     {
-      name: 'Fence Posts',
-      description: 'Long-lasting eucalyptus fence posts for agricultural and residential use.',
-      image: '/images/fence-posts.jpg',
+      name: "Fence Posts",
+      description: "Long-lasting eucalyptus fence posts for agricultural and residential use.",
+      image: "/images/fence-posts.jpg",
     },
     {
-      name: 'Decking Boards',
-      description: 'Beautiful and resilient eucalyptus decking boards for outdoor living spaces.',
-      image: '/images/decking-boards.jpg',
+      name: "Decking Boards",
+      description: "Beautiful and resilient eucalyptus decking boards for outdoor living spaces.",
+      image: "/images/decking-boards.jpg",
     },
     {
-      name: 'Custom Milling Services',
-      description: 'Tailored milling services to meet your specific project requirements.',
-      image: '/images/custom-milling.jpg',
+      name: "Custom Milling Services",
+      description: "Tailored milling services to meet your specific project requirements.",
+      image: "/images/custom-milling.jpg",
     },
     {
-      name: 'Eucalyptus Poles',
-      description: 'Versatile eucalyptus poles for various construction and landscaping applications.',
-      image: '/images/eucalyptus-poles.jpg',
+      name: "Eucalyptus Poles",
+      description: "Versatile eucalyptus poles for various construction and landscaping applications.",
+      image: "/images/eucalyptus-poles.jpg",
     },
   ]
 

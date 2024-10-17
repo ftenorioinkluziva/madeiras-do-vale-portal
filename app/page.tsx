@@ -1,11 +1,11 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { ChevronRight, Menu, X } from 'lucide-react'
-//import Image from 'next/image'
-import Link from 'next/link'
-//import type { NextPage } from 'next'
-import PlaceholderImage from './components/PlaceholderImage'
+import { useState } from "react"
+import { ChevronRight, Menu, X } from "lucide-react"
+//import Image from "next/image"
+import Link from "next/link"
+//import type { NextPage } from "next"
+import PlaceholderImage from "./components/PlaceholderImage"
 
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -63,7 +63,7 @@ export default function HomePage() {
             <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
               <div className="sm:text-center lg:text-left">
                 <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                  <span className="block xl:inline">Quality Eucalyptus Wood</span>{' '}
+                  <span className="block xl:inline">Quality Eucalyptus Wood</span>{" "}
                   <span className="block text-brand-green-light xl:inline">for Your Projects</span>
                 </h1>
                 <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
@@ -121,9 +121,9 @@ export default function HomePage() {
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">Our Products and Services</h2>
           <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { name: 'Treated Lumber', description: 'High-quality treated eucalyptus lumber for construction projects.' },
-              { name: 'Landscaping Timbers', description: 'Durable eucalyptus timbers perfect for garden and landscape design.' },
-              { name: 'Custom Milling', description: 'Custom milling services to meet your specific project needs.' },
+              { name: "Treated Lumber", description: "High-quality treated eucalyptus lumber for construction projects." },
+              { name: "Landscaping Timbers", description: "Durable eucalyptus timbers perfect for garden and landscape design." },
+              { name: "Custom Milling", description: "Custom milling services to meet your specific project needs." },
             ].map((product) => (
               <div key={product.name} className="bg-white overflow-hidden shadow rounded-lg">
                 <div className="p-5">

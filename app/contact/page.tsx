@@ -1,17 +1,17 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-//import Image from 'next/image'
-//import Link from 'next/link'
-import { Mail, Phone, MapPin } from 'lucide-react'
-import PlaceholderImage from '../components/PlaceholderImage'
+import { useState } from "react"
+//import Image from "next/image"
+//import Link from "next/link"
+import { Mail, Phone, MapPin } from "lucide-react"
+import PlaceholderImage from "../components/PlaceholderImage"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -25,9 +25,9 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Here you would typically send the form data to your server or API
-    console.log('Form submitted:', formData)
+    console.log("Form submitted:", formData)
     // Reset form or show success message
-    alert('Your message has been sent. We will get back to you soon!')
+    alert("Your message has been sent. We will get back to you soon!")
   }
 
   return (
@@ -41,7 +41,7 @@ export default function ContactPage() {
               Get in Touch
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Have questions or need assistance? We're here to help. Reach out to us using the form below or through our contact information.
+              Have questions or need assistance? We re here to help. Reach out to us using the form below or through our contact information.
             </p>
           </div>
 

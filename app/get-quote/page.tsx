@@ -1,18 +1,18 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-//import Image from 'next/image'
-//import Link from 'next/link'
-import { ChevronDown } from 'lucide-react'
+import { useState } from "react"
+//import Image from "next/image"
+//import Link from "next/link"
+import { ChevronDown } from "lucide-react"
 
 export default function GetQuotePage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    productType: '',
-    quantity: '',
-    additionalInfo: '',
+    name: "",
+    email: "",
+    phone:  "",
+    productType:  "",
+    quantity: "",
+    additionalInfo: "",
   })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -26,9 +26,9 @@ export default function GetQuotePage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Here you would typically send the form data to your server or API
-    console.log('Form submitted:', formData)
+    console.log("Form submitted:", formData)
     // Reset form or show success message
-    alert('Your quote request has been submitted. We will contact you soon!')
+    alert("Your quote request has been submitted. We will contact you soon!")
   }
 
   return (
@@ -64,7 +64,7 @@ export default function GetQuotePage() {
               Get Pricing for Your Project
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Fill out the form below, and we'll provide you with a custom quote for your eucalyptus wood needs.
+              Fill out the form below, and we ll provide you with a custom quote for your eucalyptus wood needs.
             </p>
           </div>
 
