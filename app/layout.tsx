@@ -5,7 +5,21 @@ import Link from "next/link";
 //import Image from "next/image";
 import PlaceholderImage from "./components/PlaceholderImage";
 
-const geistSans = localFont({
+// Configuração da fonte Modern Warfare
+const modernWarfare = localFont({
+  src: './fonts/ModernWarfare.woff2', // Ajuste o caminho conforme necessário
+  variable: '--font-modern-warfare',
+});
+
+// Usando Inter como alternativa para SF Pro Display
+import { Inter } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sf-pro-display',
+});
+
+/* const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
@@ -14,7 +28,7 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
-});
+}); */
 
 export const metadata: Metadata = {
   title: {
@@ -52,20 +66,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-stone-50 min-h-screen flex flex-col`}>
+      <body className={`${modernWarfare.variable} ${inter.variable} antialiased bg-stone-50 min-h-screen flex flex-col`}>
         <header>
-          <nav className="bg-brand-green-dark text-white">
+          <nav className="bg-brand-brown-dark text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
                   <Link href="/" className="flex-shrink-0">
-                  <PlaceholderImage width={32} height={32} text="Logo" className="h-8 w-8" />
+                  <PlaceholderImage 
+                    width={64} 
+                    height={32} 
+                    text="Logo" 
+                    className="h-8 w-8" />
                   </Link>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
                       <Link href="/" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-green-dark">Home</Link>
                       <Link href="/about" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-green-dark">About Us</Link>
                       <Link href="/products" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-green-dark">Products</Link>
+                      <Link href="/portfolio" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-green-dark">Portfolio</Link>
                       <Link href="/get-quote" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-green-dark">Get a Quote</Link>
                       <Link href="/contact" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-green-dark">Contact Us</Link>
                     </div>
@@ -80,7 +99,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        <footer className="bg-brand-green-dark text-white py-8">
+        <footer className="bg-brand-brown-dark text-white py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
@@ -104,7 +123,7 @@ export default function RootLayout({
                 <p>Email: info@madeirasdovale.com</p>
               </div>
             </div>
-            <div className="mt-8 border-t border-brand-green-dark pt-8 text-center">
+            <div className="mt-8 border-t border-brand-brown-light pt-8 text-center">
               <p>&copy; {new Date().getFullYear()} Madeiras do Vale. All rights reserved.</p>
             </div>
           </div>

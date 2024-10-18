@@ -19,6 +19,10 @@ const config: Config = {
         'brown-light': '#6D523F', // Estimativa para o marrom claro
         },
       },
+      fontFamily: {
+        'modern-warfare': 'var(--font-modern-warfare), sans-serif',
+        'sf-pro': 'var(--font-sf-pro-display), Inter, sans-serif',
+      },
     },
   },
   plugins: [],

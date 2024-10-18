@@ -6,6 +6,9 @@
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
+    images: {
+      domains: ["cdn.leonardo.ai"],
+    },
   }
   
   export default nextConfig

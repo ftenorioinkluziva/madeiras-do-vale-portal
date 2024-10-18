@@ -1,6 +1,6 @@
-//import Image from "next/image"
+import Image from "next/image"
 import Link from "next/link"
-import PlaceholderImage from "../components/PlaceholderImage"
+//import PlaceholderImage from "../components/PlaceholderImage"
 
 // Define an interface for the product type
 interface Product {
@@ -15,32 +15,32 @@ export default function ProductsPage() {
     {
       name: "Treated Eucalyptus Lumber",
       description: "High-quality treated eucalyptus lumber for construction projects.",
-      image: "treated-lumber",
+      image: "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/fb59acaa-67b4-4828-bab7-0642cd19b08b/Leonardo_Kino_XL_Treated_Eucalyptus_LumberHighquality_treated_0.jpg",
     },
     {
       name: "Landscaping Timbers",
       description: "Durable eucalyptus timbers perfect for garden and landscape design.",
-      image: "/images/landscaping-timbers.jpg",
+      image: "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/8e4571d8-610a-4d53-bd23-db730e619ad3/Leonardo_Kino_XL_Paisagismo_de_um_jardim_com_casa_de_madeira_d_1.jpg",
     },
     {
       name: "Fence Posts",
       description: "Long-lasting eucalyptus fence posts for agricultural and residential use.",
-      image: "/images/fence-posts.jpg",
+      image: "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/68c3c3e0-1e38-484d-924d-7cfea287d7d1/Leonardo_Kino_XL_eucalyptus_fence_posts_for_agricultural_2.jpg",
     },
     {
       name: "Decking Boards",
       description: "Beautiful and resilient eucalyptus decking boards for outdoor living spaces.",
-      image: "/images/decking-boards.jpg",
+      image: "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/53170e99-dd55-4793-b30a-2a7546d0cf28/Leonardo_Kino_XL_Decking_Boards_Beautiful_and_resilient_eucaly_3.jpg",
     },
     {
       name: "Custom Milling Services",
       description: "Tailored milling services to meet your specific project requirements.",
-      image: "/images/custom-milling.jpg",
+      image: "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/db913b3e-038b-4d8f-b588-7c2b57f2e1e1/Leonardo_Kino_XL_Custom_Milling_Services_Tailored_milling_serv_1.jpg",
     },
     {
       name: "Eucalyptus Poles",
       description: "Versatile eucalyptus poles for various construction and landscaping applications.",
-      image: "/images/eucalyptus-poles.jpg",
+      image: "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/182655f6-1b01-4d3f-b3d3-84cef7b2077d/Leonardo_Kino_XL_Versatile_eucalyptus_poles_for_various_constr_1.jpg",
     },
   ]
 
@@ -64,18 +64,18 @@ export default function ProductsPage() {
               {products.map((product) => (
                 <div key={product.name} className="group">
                   <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-                  <PlaceholderImage
+                  <Image
+                      src={product.image}
                       width={600}
                       height={400}
-                      text={product.name}
+                      alt={product.name}
                       className="w-full h-full object-center object-cover group-hover:opacity-75"
-                    />
+                  />
                   </div>
                   <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
                   <p className="mt-1 text-lg font-medium text-gray-900">{product.description}</p>
                 </div>
-              ))}
-            </div>
+              ))}            </div>
           </div>
 
           <div className="mt-20 text-center">
