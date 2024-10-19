@@ -77,7 +77,7 @@ export default function GetQuotePage() {
                   name="name"
                   id="name"
                   required
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm font-medium text-gray-700"
                   value={formData.name}
                   onChange={handleInputChange}
                 />
@@ -89,7 +89,7 @@ export default function GetQuotePage() {
                   name="email"
                   id="email"
                   required
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm font-medium text-gray-700"
                   value={formData.email}
                   onChange={handleInputChange}
                 />
@@ -100,7 +100,7 @@ export default function GetQuotePage() {
                   type="tel"
                   name="phone"
                   id="phone"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm font-medium text-gray-700"
                   value={formData.phone}
                   onChange={handleInputChange}
                 />
@@ -112,7 +112,7 @@ export default function GetQuotePage() {
                     name="productType"
                     id="productType"
                     required
-                    className="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 appearance-none"
+                    className="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 appearance-none text-sm font-medium text-gray-700"
                     value={formData.productType}
                     onChange={handleInputChange}
                   >
@@ -134,7 +134,7 @@ export default function GetQuotePage() {
                   name="quantity"
                   id="quantity"
                   placeholder="e.g., 100 linear feet, 50 posts"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm font-medium text-gray-700"
                   value={formData.quantity}
                   onChange={handleInputChange}
                 />

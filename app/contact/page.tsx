@@ -56,7 +56,7 @@ export default function ContactPage() {
                       name="name"
                       id="name"
                       required
-                      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm font-medium text-gray-700"
                       value={formData.name}
                       onChange={handleInputChange}
                     />
@@ -68,7 +68,7 @@ export default function ContactPage() {
                       name="email"
                       id="email"
                       required
-                      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm font-medium text-gray-700"
                       value={formData.email}
                       onChange={handleInputChange}
                     />
@@ -80,7 +80,7 @@ export default function ContactPage() {
                       name="subject"
                       id="subject"
                       required
-                      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm font-medium text-gray-700"
                       value={formData.subject}
                       onChange={handleInputChange}
                     />
@@ -92,7 +92,7 @@ export default function ContactPage() {
                       id="message"
                       rows={4}
                       required
-                      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm font-medium text-gray-700"
                       value={formData.message}
                       onChange={handleInputChange}
                     ></textarea>

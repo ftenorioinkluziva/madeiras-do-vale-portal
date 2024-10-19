@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
-//import Image from "next/image";
-import PlaceholderImage from "./components/PlaceholderImage";
+import Image from "next/image";
+//import PlaceholderImage from "./components/PlaceholderImage";
 
 // Configuração da fonte Modern Warfare
 const modernWarfare = localFont({
@@ -73,11 +73,14 @@ export default function RootLayout({
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
                   <Link href="/" className="flex-shrink-0">
-                  <PlaceholderImage 
-                    width={64} 
-                    height={32} 
-                    text="Logo" 
-                    className="h-8 w-8" />
+                  <Image
+                    src="https://i.ibb.co/pbFcDXd/LOGO-PRINCIPAL-02.png"
+                    alt="Logo"
+                    width={96}
+                    height={32}
+                    className="h-8 w-auto"
+                  />
+
                   </Link>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
