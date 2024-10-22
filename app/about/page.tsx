@@ -1,84 +1,129 @@
 "use client"
+import { Shield, TreePine, Leaf, Recycle } from 'lucide-react';
+//import { useState } from "react";
+import HeroSection from '../components/HeroSection';
 
 export default function AboutPage() {
 
   return (
     <div className="bg-stone-50 min-h-screen">
 
-      {/* About Us Content */}
-      <div className="py-12">
+    {/* Hero Section */}
+    <HeroSection 
+        title="Do Vale do São Francisco"
+        highlightedText="para o Mundo"
+        description="Nascida no coração do Vale do São Francisco, a Madeiras do Vale representa o encontro perfeito entre tradição e inovação na indústria madeireira."
+        imageUrl="https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/c9d30451-58ad-4abe-91a9-35c0c055dc8b/Leonardo_Kino_XL_A_stunningly_crafted_eucalyptus_wood_hero_sec_2.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"  // Substitua pela URL real da imagem
+     />
+
+
+      {/* Essência da Marca */}
+      <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center">
-            <h2 className="text-base text-brand-olive font-semibold tracking-wide uppercase">About Us</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Madeiras do Vale: Your Trusted Wood Partner
-            </p>
-            <p className="mt-4 max-w-2xl text-xl text-brand-green-dark lg:mx-auto">
-              With over two decades of experience, we ve been at the forefront of sustainable eucalyptus wood solutions.
-            </p>
-          </div>
-
-          <div className="mt-20">
-            <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-              <div className="relative">
-                <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-brand-olive text-white">
-                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                  </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-brand-green-dark">Sustainable Practices</p>
-                </dt>
-                <dd className="mt-2 ml-16 text-base text-gray-500">
-                  We are committed to sustainable forestry practices, ensuring that our products are environmentally friendly and responsibly sourced.
-                </dd>
-              </div>
-
-              <div className="relative">
-                <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-brand-olive text-white">
-                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                    </svg>
-                  </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-brand-green-dark">Quality Assurance</p>
-                </dt>
-                <dd className="mt-2 ml-16 text-base text-gray-500">
-                  Our rigorous quality control processes ensure that every product meets the highest standards of durability and performance.
-                </dd>
-              </div>
-
-              <div className="relative">
-                <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-brand-olive text-white">
-                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-brand-green-dark">Innovation</p>
-                </dt>
-                <dd className="mt-2 ml-16 text-base text-gray-500">
-                  We continuously invest in research and development to improve our products and processes, staying at the forefront of the industry.
-                </dd>
-              </div>
-
-              <div className="relative">
-                <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-brand-olive text-white">
-                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                    </svg>
-                  </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-brand-green-dark">Customer Support</p>
-                </dt>
-                <dd className="mt-2 ml-16 text-base text-gray-500">
-                  Our dedicated team of experts is always ready to provide guidance and support, ensuring your projects success from start to finish.
-                </dd>
-              </div>
-            </dl>
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Nossa Essência
+              </h2>
+              <p className="mt-4 text-lg text-gray-600">
+                Somos sinônimo de robustez e singularidade. Com um compromisso inabalável com a qualidade e a sustentabilidade, lideramos a criação de produtos de madeira que combinam durabilidade excepcional com uma estética imbatível.
+              </p>
+              <p className="mt-4 text-lg text-gray-600">
+                Cada peça que oferecemos carrega a força e a beleza única das florestas que nos inspiram, estabelecendo novos padrões de excelência no mercado.
+              </p>
+            </div>
+            <div className="mt-12 lg:mt-0 grid grid-cols-2 gap-6">
+              <img
+                src="/api/placeholder/400/300"
+                alt="Produtos de madeira"
+                className="rounded-lg shadow-lg"
+              />
+              <img
+                src="/api/placeholder/400/300"
+                alt="Processo de produção"
+                className="rounded-lg shadow-lg mt-8"
+              />
+              <img
+                src="/api/placeholder/400/300"
+                alt="Sustentabilidade"
+                className="rounded-lg shadow-lg"
+              />
+              <img
+                src="/api/placeholder/400/300"
+                alt="Qualidade"
+                className="rounded-lg shadow-lg mt-8"
+              />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Missão e Visão */}
+      <div className="relative py-20 bg-brand-green-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+              <div className="flex items-center mb-6">
+                <TreePine className="h-10 w-10 text-brand-green-light" />
+                <h3 className="ml-4 text-2xl font-bold text-white">Nossa Missão</h3>
+              </div>
+              <p className="text-gray-200">
+                Transformar a riqueza natural do Vale do São Francisco em produtos de madeira de alta qualidade que atendam e superem as expectativas de nossos clientes. Comprometemo-nos a praticar uma gestão sustentável dos recursos florestais, preservando o meio ambiente para as gerações futuras.
+              </p>
+            </div>
+            <div className="mt-12 lg:mt-0 bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+              <div className="flex items-center mb-6">
+                <Leaf className="h-10 w-10 text-brand-green-light" />
+                <h3 className="ml-4 text-2xl font-bold text-white">Nossa Visão</h3>
+              </div>
+              <p className="text-gray-200">
+                Ser reconhecida como a marca de referência global em produtos de madeira, destacando-se pela excelência, sustentabilidade e inovação. Aspiramos a ser a escolha preferida para aqueles que buscam a combinação perfeita de robustez e elegância.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Nossos Valores */}
+      <div className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Nossos Valores
+            </h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+              Fundamentamos nossa atuação em valores sólidos que orientam cada decisão e cada produto que desenvolvemos.
+            </p>
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-brand-green-dark to-brand-olive rounded-lg opacity-50 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative bg-white p-8 rounded-lg">
+                <Shield className="h-12 w-12 text-brand-green-dark mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Excelência</h3>
+                <p className="text-gray-600">Buscamos a perfeição em cada detalhe, desde a seleção da matéria-prima até o acabamento final.</p>
+              </div>
+            </div>
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-brand-olive to-brand-green-light rounded-lg opacity-50 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative bg-white p-8 rounded-lg">
+                <Recycle className="h-12 w-12 text-brand-green-dark mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Sustentabilidade</h3>
+                <p className="text-gray-600">Compromisso com práticas sustentáveis e preservação ambiental em todos os processos.</p>
+              </div>
+            </div>
+            <div className="relative group sm:col-span-2 lg:col-span-1">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-brand-green-light to-brand-green-dark rounded-lg opacity-50 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative bg-white p-8 rounded-lg">
+                <Leaf className="h-12 w-12 text-brand-green-dark mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Inovação</h3>
+                <p className="text-gray-600">Constante busca por novas tecnologias e processos para oferecer o melhor em produtos de madeira.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   )
 }

@@ -1,173 +1,250 @@
 "use client"
-import Image from "next/image"
+
 import { useState } from "react"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
+import Image from 'next/image'
+import HeroSection from "../components/HeroSection"
 
-// This would typically come from a database or API
 const projects = [
   {
     id: 1,
-    title: "Luxury Deck Construction",
-    description: "A high-end residential deck project using our premium eucalyptus decking boards.",
+    title: "Deck Residencial de Alto Padrão",
+    description: "Projeto residencial com deck em eucalipto tratado, combinando durabilidade e sofisticação.",
+    category: "Área de Lazer",
+    location: "Petrolina, PE",
+    area: "120m²",
     images: [
-      "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/db913b3e-038b-4d8f-b588-7c2b57f2e1e1/Leonardo_Kino_XL_Custom_Milling_Services_Tailored_milling_serv_0.jpg",
-      "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/db913b3e-038b-4d8f-b588-7c2b57f2e1e1/Leonardo_Kino_XL_Custom_Milling_Services_Tailored_milling_serv_2.jpg",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
     ],
+    features: [
+      "Madeira de eucalipto premium",
+      "Acabamento personalizado",
+      "Resistência UV",
+      "Garantia de 10 anos"
+    ]
   },
   {
     id: 2,
-    title: "Sustainable Farm Fencing",
-    description: "Large-scale agricultural fencing project utilizing our durable eucalyptus fence posts.",
+    title: "Cercamento de Propriedade Rural",
+    description: "Projeto de cercamento completo utilizando mourões de eucalipto tratado de alta durabilidade.",
+    category: "Área Rural",
+    location: "Juazeiro, BA",
+    area: "5000m lineares",
     images: [
-      "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/68c3c3e0-1e38-484d-924d-7cfea287d7d1/Leonardo_Kino_XL_eucalyptus_fence_posts_for_agricultural_3.jpg",
-      "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/68c3c3e0-1e38-484d-924d-7cfea287d7d1/Leonardo_Kino_XL_eucalyptus_fence_posts_for_agricultural_2.jpg",
-      "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/68c3c3e0-1e38-484d-924d-7cfea287d7d1/Leonardo_Kino_XL_eucalyptus_fence_posts_for_agricultural_1.jpg",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
     ],
+    features: [
+      "Mourões de eucalipto certificados",
+      "Tratamento em autoclave",
+      "Alta resistência mecânica",
+      "Durabilidade garantida"
+    ]
   },
   {
     id: 3,
-    title: "Urban Park Renovation",
-    description: "Comprehensive park renovation featuring our treated eucalyptus lumber for benches and structures.",
+    title: "Revitalização de Parque Municipal",
+    description: "Projeto completo de mobiliário urbano em eucalipto tratado para área de lazer pública.",
+    category: "Projeto Urbano",
+    location: "Paulo Afonso, BA",
+    area: "800m²",
     images: [
-      "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/a9b1a828-cd53-4a58-8b22-442a888fc56e/Leonardo_Kino_XL_Comprehensive_park_renovation_featuring_our_t_3.jpg",
-      "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/a9b1a828-cd53-4a58-8b22-442a888fc56e/Leonardo_Kino_XL_Comprehensive_park_renovation_featuring_our_t_2.jpg",
-      "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/a9b1a828-cd53-4a58-8b22-442a888fc56e/Leonardo_Kino_XL_Comprehensive_park_renovation_featuring_our_t_1.jpg",
-      "https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/a9b1a828-cd53-4a58-8b22-442a888fc56e/Leonardo_Kino_XL_Comprehensive_park_renovation_featuring_our_t_0.jpg",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
     ],
+    features: [
+      "Bancos e pergolados",
+      "Deck para área de convivência",
+      "Estruturas de sombreamento",
+      "Resistência a intempéries"
+    ]
   },
-  // Add more projects as needed
 ]
 
 export default function PortfolioPage() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [activeFilter, setActiveFilter] = useState('todos')
 
-  const openLightbox = (projectId: number, imageIndex: number) => {
-    setSelectedProject(projectId)
-    setCurrentImageIndex(imageIndex)
-  }
-
-  const closeLightbox = () => {
-    setSelectedProject(null)
-    setCurrentImageIndex(0)
-  }
-
-  const nextImage = () => {
-    if (selectedProject !== null) {
-      const project = projects.find(p => p.id === selectedProject)
-      if (project) {
-        setCurrentImageIndex((currentImageIndex + 1) % project.images.length)
+  const handleLightbox = {
+    open: (projectId: number, imageIndex: number) => {
+      setSelectedProject(projectId)
+      setCurrentImageIndex(imageIndex)
+    },
+    close: () => {
+      setSelectedProject(null)
+      setCurrentImageIndex(0)
+    },
+    next: () => {
+      if (selectedProject !== null) {
+        const project = projects.find(p => p.id === selectedProject)
+        if (project) {
+          setCurrentImageIndex((currentImageIndex + 1) % project.images.length)
+        }
       }
-    }
-  }
-
-  const prevImage = () => {
-    if (selectedProject !== null) {
-      const project = projects.find(p => p.id === selectedProject)
-      if (project) {
-        setCurrentImageIndex((currentImageIndex - 1 + project.images.length) % project.images.length)
+    },
+    prev: () => {
+      if (selectedProject !== null) {
+        const project = projects.find(p => p.id === selectedProject)
+        if (project) {
+          setCurrentImageIndex((currentImageIndex - 1 + project.images.length) % project.images.length)
+        }
       }
     }
   }
 
   return (
     <div className="bg-stone-50 min-h-screen">
-      {/* Portfolio Content */}
-      <div className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center mb-12">
-            <h2 className="text-base text-green-600 font-semibold tracking-wide uppercase">Our Portfolio</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Showcasing Our Finest Work
-            </p>
-            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Explore our diverse range of projects featuring our premium eucalyptus wood products.
-            </p>
-          </div>
+    <HeroSection 
+        title="Projetos Madeiras do"
+        highlightedText="Vale"
+        description="Conheça alguns dos nossos trabalhos que demonstram a qualidade e versatilidade do eucalipto tratado do Vale do São Francisco."
+        imageUrl="https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/c9d30451-58ad-4abe-91a9-35c0c055dc8b/Leonardo_Kino_XL_A_stunningly_crafted_eucalyptus_wood_hero_sec_2.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"  // Substitua pela URL real da imagem
+    />
 
-          <div className="mt-10">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project) => (
-                <div key={project.id} className="bg-white overflow-hidden shadow-lg rounded-lg">
-                  <div className="relative h-48 w-full">
-                    <Image
-                      src={project.images[0]}
-                      alt={project.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="cursor-pointer"
-                      onClick={() => openLightbox(project.id, 0)}
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
-                    <p className="mt-2 text-gray-600">{project.description}</p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {project.images.slice(1, 4).map((image, index) => (
-                        <div key={index} className="relative h-16 w-16">
-                          <Image
-                            src={image}
-                            alt={`${project.title} thumbnail ${index + 1}`}
-                            layout="fill"
-                            objectFit="cover"
-                            className="rounded cursor-pointer"
-                            onClick={() => openLightbox(project.id, index + 1)}
-                          />
-                        </div>
-                      ))}
-                      {project.images.length > 4 && (
-                        <div
-                          className="h-16 w-16 bg-gray-200 rounded flex items-center justify-center cursor-pointer"
-                          onClick={() => openLightbox(project.id, 4)}
-                        >
-                          <span className="text-gray-600 font-semibold">+{project.images.length - 4}</span>
-                        </div>
-                      )}
-                    </div>
+
+      {/* Filtros */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-wrap gap-4 justify-center">
+          {['todos', 'Área de Lazer', 'Área Rural', 'Projeto Urbano'].map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`px-6 py-3 rounded-full font-medium transition-colors ${
+                activeFilter === filter
+                  ? 'bg-brand-green-dark text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {filter.charAt(0).toUpperCase() + filter.slice(1)}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Projetos */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {projects
+            .filter(project => activeFilter === 'todos' || project.category === activeFilter)
+            .map((project) => (
+              <div key={project.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="relative h-64">
+                  <Image className="w-full h-full object-cover cursor-pointer"
+                    src={project.images[0]}
+                    alt={project.title}
+                    onClick={() => handleLightbox.open(project.id, 0)}
+                    width={500}
+                    height={500}
+                  />
+                  <div className="absolute top-4 left-4 bg-brand-green-dark text-white px-4 py-2 rounded-full text-sm">
+                    {project.category}
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <span className="font-medium mr-2">Localização:</span>
+                      {project.location}
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <span className="font-medium mr-2">Área:</span>
+                      {project.area}
+                    </div>
+                  </div>
+
+                  <div className="mt-6">
+                    <h4 className="font-medium text-gray-900 mb-2">Destaques do Projeto</h4>
+                    <ul className="grid grid-cols-2 gap-2">
+                      {project.features.map((feature, index) => (
+                        <li key={index} className="text-sm text-gray-600 flex items-start">
+                          <span className="text-brand-green-dark mr-2">•</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.images.slice(1, 4).map((image, index) => (
+                      <div key={index} className="h-16 w-16">
+                        <Image className="w-full h-full object-cover rounded cursor-pointer"
+                          width={500}
+                          height={500}
+                          src={image}
+                          alt={`${project.title} thumbnail ${index + 1}`}  
+                          onClick={() => handleLightbox.open(project.id, index + 1)}
+                        />
+                      </div>
+                    ))}
+                    {project.images.length > 4 && (
+                      <div
+                        className="h-16 w-16 bg-gray-200 rounded flex items-center justify-center cursor-pointer"
+                        onClick={() => handleLightbox.open(project.id, 4)}
+                      >
+                        <span className="text-gray-600 font-semibold">+{project.images.length - 4}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
 
       {/* Lightbox */}
       {selectedProject !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="relative max-w-4xl w-full mx-4">
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+          <div className="relative max-w-5xl w-full mx-4">
             <button
-              onClick={closeLightbox}
+              onClick={handleLightbox.close}
               className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
-              aria-label="Close lightbox"
+              aria-label="Fechar visualização"
             >
-              <X size={24} />
+              <X className="h-8 w-8" />
             </button>
-            <div className="bg-white rounded-lg overflow-hidden">
-              <div className="relative h-96 md:h-[32rem] bg-white">
-                <Image
-                  src={projects.find(p => p.id === selectedProject)?.images[currentImageIndex] || ''}
-                  alt={`Project image ${currentImageIndex + 1}`}
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-              <div className="absolute left-4 right-4 bottom-4 flex justify-between">
+            
+            <div className="relative">
+              <Image 
+                className="mx-auto max-h-[80vh] object-contain"
+                src="{projects.find(p => p.id === selectedProject)?.images[currentImageIndex]}"
+                width={500}
+                height={500}
+                alt={`Imagem do projeto ${currentImageIndex + 1}`}
+              />
+              
+              <div className="absolute left-4 right-4 top-1/2 -translate-y-1/2 flex justify-between">
                 <button
-                  onClick={prevImage}
-                  className="bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2"
-                  aria-label="Previous image"
+                  onClick={handleLightbox.prev}
+                  className="bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-3 transform -translate-y-1/2"
+                  aria-label="Imagem anterior"
                 >
-                  <ChevronLeft size={24} />
+                  <ChevronLeft className="h-8 w-8" />
                 </button>
                 <button
-                  onClick={nextImage}
-                  className="bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2"
-                  aria-label="Next image"
+                  onClick={handleLightbox.next}
+                  className="bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-3 transform -translate-y-1/2"
+                  aria-label="Próxima imagem"
                 >
-                  <ChevronRight size={24} />
+                  <ChevronRight className="h-8 w-8" />
                 </button>
               </div>
+            </div>
+
+            <div className="text-white text-center mt-4">
+              <h3 className="text-xl font-bold">
+                {projects.find(p => p.id === selectedProject)?.title}
+              </h3>
+              <p className="text-gray-300 mt-2">
+                {projects.find(p => p.id === selectedProject)?.description}
+              </p>
             </div>
           </div>
         </div>
