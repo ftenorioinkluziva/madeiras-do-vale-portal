@@ -1,9 +1,8 @@
 "use client"
 
 import { useState } from "react"
-//import Image from "next/image"
-//import Link from "next/link"
 import { ChevronDown } from "lucide-react"
+
 
 export default function GetQuotePage() {
   const [formData, setFormData] = useState({
@@ -33,27 +32,6 @@ export default function GetQuotePage() {
 
   return (
     <div className="bg-stone-50 min-h-screen">
-      {/* Navigation 
-      <nav className="bg-green-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              <Link href="/" className="flex-shrink-0">
-                <Image src="/placeholder.svg?height=32&width=32" width={32} height={32} alt="Madeiras do Vale Logo" className="h-8 w-8" />
-              </Link>
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  <Link href="/" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700">Home</Link>
-                  <Link href="/about" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700">About Us</Link>
-                  <Link href="/products" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700">Products</Link>
-                  <Link href="/get-quote" className="px-3 py-2 rounded-md text-sm font-medium bg-green-900">Get a Quote</Link>
-                  <Link href="/contact" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700">Contact Us</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>*/}
 
       {/* Get a Quote Content */}
       <div className="py-12">

@@ -1,6 +1,9 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 //import PlaceholderImage from "../components/PlaceholderImage"
+
 
 // Define an interface for the product type
 interface Product {
@@ -75,7 +78,8 @@ export default function ProductsPage() {
                   <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
                   <p className="mt-1 text-lg font-medium text-gray-900">{product.description}</p>
                 </div>
-              ))}            </div>
+              ))}            
+              </div>
           </div>
 
           <div className="mt-20 text-center">

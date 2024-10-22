@@ -1,60 +1,13 @@
 "use client"
 
-import { useState } from "react"
-import { ChevronRight, Menu, X } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-//import type { NextPage } from "next"
-import PlaceholderImage from "./components/PlaceholderImage"
 
 export default function HomePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <div className="bg-stone-50 min-h-screen">
-      {/* Mobile menu button */}
-      <div className="md:hidden absolute top-4 right-4 z-20">
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-brand-green-dark focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-        >
-          <span className="sr-only">Open main menu</span>
-          {mobileMenuOpen ? (
-            <X className="block h-6 w-6" aria-hidden="true" />
-          ) : (
-            <Menu className="block h-6 w-6" aria-hidden="true" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-0 inset-x-0 z-10 p-2 transition transform origin-top-right">
-          <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-            <div className="px-5 pt-4 flex items-center justify-between">
-              <div>
-                <PlaceholderImage width={32} height={32} text="Madeiras do Vale Logo" className="h-8 w-auto" />
-              </div>
-              <div className="-mr-2">
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-green-dark"
-                >
-                  <span className="sr-only">Close main menu</span>
-                  <X className="h-6 w-6" aria-hidden="true" />
-                </button>
-              </div>
-            </div>
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</Link>
-              <Link href="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About Us</Link>
-              <Link href="/products" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Products</Link>
-              <Link href="/get-quote" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Get a Quote</Link>
-              <Link href="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact Us</Link>
-            </div>
-          </div>
-        </div>
-      )}
 
   {/* Hero Section */}
     <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0  bg-brand-green-dark overflow-hidden">
