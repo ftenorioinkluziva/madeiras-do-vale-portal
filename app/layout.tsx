@@ -1,7 +1,7 @@
 "use client";
 
 import { Inter } from 'next/font/google';
-import { use, useState } from "react";
+import { useState } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavigationComponent from "./components/NavigationComponent";
