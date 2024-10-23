@@ -4,6 +4,7 @@ import { useState } from "react"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import Image from 'next/image'
 import HeroSection from "../components/HeroSection"
+import CTAFinal from "../components/CTAFinal"
 
 const projects = [
   {
@@ -252,6 +253,7 @@ export default function PortfolioPage() {
             </div>
           </div>
         )}
+        <CTAFinal />
       </div>
   )
 }

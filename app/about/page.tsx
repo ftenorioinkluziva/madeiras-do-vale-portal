@@ -3,6 +3,8 @@ import { Shield, TreePine, Leaf, Recycle } from 'lucide-react';
 //import { useState } from "react";
 import HeroSection from '../components/HeroSection';
 import Image from 'next/image';
+import CTAFinal from '../components/CTAFinal';
+
 
 export default function AboutPage() {
 
@@ -132,7 +134,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-
+      <CTAFinal />
     </div>
   )
 }

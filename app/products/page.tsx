@@ -5,6 +5,7 @@ import HeroSection from '../components/HeroSection';
 //import Link from "next/link"
 import { useState } from "react";
 import { Shield, TreePine, Construction, Grid, Fence } from 'lucide-react';
+import CTAFinal from "../components/CTAFinal";
 //import PlaceholderImage from "../components/PlaceholderImage"
 
 
@@ -235,36 +236,7 @@ return (
     </div>
 
     {/* CTA Final */}
-    <div className="bg-brand-brown-dark">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 lg:p-12">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-            <div>
-              <h2 className="text-3xl font-extrabold text-white">
-                Precisa de uma Solução Personalizada?
-              </h2>
-              <p className="mt-4 text-lg text-gray-300">
-                Nossa equipe está pronta para desenvolver a solução ideal para seu projeto.
-              </p>
-            </div>
-            <div className="mt-8 lg:mt-0 flex flex-col sm:flex-row gap-4 justify-end">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-white/10"
-              >
-                Fale Conosco
-              </a>
-              <a
-                href="/get-quote"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-brand-brown-dark bg-white hover:bg-gray-100"
-              >
-                Solicitar Orçamento
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <CTAFinal />
   </div>
   )
 }

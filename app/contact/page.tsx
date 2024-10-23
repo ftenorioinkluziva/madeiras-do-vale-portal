@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Mail, Phone, MapPin, Clock, MessageSquare, Building2, Truck } from "lucide-react"
 import Image from 'next/image'
 import HeroSection from "../components/HeroSection"
+import CTAFinal from "../components/CTAFinal"
 
 
 interface FormData {
@@ -239,8 +240,11 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+
+          
         </div>
       </div>
+      <CTAFinal />
     </div>
   )
 }

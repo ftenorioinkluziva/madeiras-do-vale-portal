@@ -3,7 +3,7 @@
 import HeroSection from './components/HeroSection';
 import { Sprout, Computer, ShieldCheck } from 'lucide-react';
 import  Image  from 'next/image';
-
+import CTAFinal from './components/CTAFinal';
 
 //import PlaceholderImage from './components/PlaceholderImage';
 
@@ -95,17 +95,10 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* CTA Final */}
+      {/* CTA Final 
       <div className="relative">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-brand-brown-light/90 to-brand-brown-dark/90" />
-          <Image 
-          src=""
-          alt="Produtos de madeira"
-          className="w-full h-full object-cover"
-          width={1920}
-          height={600}
-          />
         </div>
         <div className="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-12 lg:p-20">
@@ -138,7 +131,8 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
+      <CTAFinal />
     </div>
   );
 }
