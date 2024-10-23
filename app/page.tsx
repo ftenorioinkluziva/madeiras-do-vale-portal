@@ -3,6 +3,8 @@
 import HeroSection from './components/HeroSection';
 import { Sprout, Computer, ShieldCheck } from 'lucide-react';
 import  Image  from 'next/image';
+
+
 //import PlaceholderImage from './components/PlaceholderImage';
 
 
@@ -10,53 +12,6 @@ export default function HomePage() {
 
   return (
     <div className="bg-stone-50 min-h-screen">
-
-  {/* Hero Section 
-    <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0  bg-brand-green-dark overflow-hidden">
-      <div className="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
-        <svg
-          className="absolute left-0 hidden h-full text-brand-green-dark transform -translate-x-1/2 lg:block"
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          preserveAspectRatio="none slice"
-        >
-          <path d="M50 0H100L50 100H0L50 0Z" />
-        </svg>
-        <Image src="https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/c9d30451-58ad-4abe-91a9-35c0c055dc8b/Leonardo_Kino_XL_A_stunningly_crafted_eucalyptus_wood_hero_sec_2.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt={"Eucalyptus wood products"}         
-            className="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
-            width={1260}
-            height={750}
-        />
-      </div>
-      <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
-        <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
-          <h1 className="text-4xl tracking-tight font-sf-pro font-extrabold text-white sm:text-5xl md:text-6xl">
-            <span className="block xl:inline">Quality Eucalyptus Wood</span>{" "}
-            <span className="block text-brand-green-light xl:inline">for Your Projects</span>
-          </h1>
-          <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  Madeiras do Vale provides premium treated eucalyptus wood products and services for construction and landscaping.
-          </p>
-          <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-            <div className="mt-3 sm:mt-0 sm:ml-3">
-              <Link
-              href="/get-quote"
-              className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-sf-pro font-medium rounded-md text-white bg-green-600 hover:bg-green-700 md:py-4 md:text-lg md:px-10"
-              > Get a Quote
-              </Link>
-            </div>
-            <div className="mt-3 sm:mt-0 sm:ml-3">
-              <Link
-              href="/contact"
-              className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-200 md:py-4 md:text-lg md:px-10"
-              > Contact Us
-             </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-   End Hero Section */}
 
   <HeroSection 
         title="A Força da Tradição"
@@ -128,7 +83,7 @@ export default function HomePage() {
             <div className="mt-12 lg:mt-0">
               <div className="relative rounded-lg overflow-hidden shadow-xl">
                 <Image className="w-full h-full object-cover"
-                  src="/api/placeholder/800/600"
+                  src="https://i.ibb.co/zGDSDNK/og-image.jpg"
                   alt="Processo de produção"
                   width={500}
                   height={500}
@@ -144,8 +99,8 @@ export default function HomePage() {
       <div className="relative">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-brand-brown-light/90 to-brand-brown-dark/90" />
-          <Image
-          src="/api/placeholder/1920/600"
+          <Image 
+          src=""
           alt="Produtos de madeira"
           className="w-full h-full object-cover"
           width={1920}

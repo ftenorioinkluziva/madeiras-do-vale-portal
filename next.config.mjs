@@ -7,8 +7,10 @@ const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
     images: {
-      domains: ["cdn.leonardo.ai","i.ibb.co","ibb.co"],	
+      domains: ["cdn.leonardo.ai","i.ibb.co","ibb.co"]
     },
   }
+
   
+
   export default nextConfig

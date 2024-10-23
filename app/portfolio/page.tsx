@@ -14,8 +14,10 @@ const projects = [
     location: "Petrolina, PE",
     area: "120m²",
     images: [
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600",
+      "https://i.ibb.co/wN4SmJh/A-luxury-residential-deck-made-from-treated-e-0.jpg",
+      "https://i.ibb.co/wN4SmJh/A-luxury-residential-deck-made-from-treated-e-0.jpg",
+  	  "https://i.ibb.co/pJznFV4/A-luxury-residential-deck-made-from-treated-e-2.jpg",
+      "https://i.ibb.co/c1cz63p/A-luxury-residential-deck-made-from-treated-e-3.jpg"
     ],
     features: [
       "Madeira de eucalipto premium",
@@ -32,9 +34,11 @@ const projects = [
     location: "Juazeiro, BA",
     area: "5000m lineares",
     images: [
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600",
+      "https://i.ibb.co/6PY1GvQ/A-beautifully-crafted-rural-property-enclosur-3.jpg",
+      "https://i.ibb.co/LNZGYcv/A-beautifully-crafted-rural-property-enclosur-2.jpg",
+      "https://i.ibb.co/RHGrmPp/A-beautifully-crafted-rural-property-enclosur-2-1.jpg",
+      "https://i.ibb.co/C5D7tCN/A-beautifully-crafted-rural-property-enclosur-1.jpg",
+      "https://i.ibb.co/N9ZT6qV/A-beautifully-crafted-rural-property-enclosur-0.jpg"
     ],
     features: [
       "Mourões de eucalipto certificados",
@@ -51,10 +55,10 @@ const projects = [
     location: "Paulo Afonso, BA",
     area: "800m²",
     images: [
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600",
+      "https://i.ibb.co/2y8Ccqy/Leonardo-Kino-XL-Comprehensive-park-renovation-featuring-our-t-0-1.jpg",
+      "https://i.ibb.co/hcj843c/Leonardo-Kino-XL-Comprehensive-park-renovation-featuring-our-t-1-1.jpg",
+      "https://i.ibb.co/9n908bb/Leonardo-Kino-XL-Comprehensive-park-renovation-featuring-our-t-2-1.jpg",
+      "https://i.ibb.co/xmYDwzw/Leonardo-Kino-XL-Comprehensive-park-renovation-featuring-our-t-3-1.jpg"
     ],
     features: [
       "Bancos e pergolados",
@@ -103,7 +107,7 @@ export default function PortfolioPage() {
         title="Projetos Madeiras do"
         highlightedText="Vale"
         description="Conheça alguns dos nossos trabalhos que demonstram a qualidade e versatilidade do eucalipto tratado do Vale do São Francisco."
-        imageUrl="https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/c9d30451-58ad-4abe-91a9-35c0c055dc8b/Leonardo_Kino_XL_A_stunningly_crafted_eucalyptus_wood_hero_sec_2.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"  // Substitua pela URL real da imagem
+        imageUrl="https://cdn.leonardo.ai/users/a5b938ed-a440-4cf6-a923-a28d2c4ae909/generations/c9d30451-58ad-4abe-91a9-35c0c055dc8b/Leonardo_Kino_XL_A_stunningly_crafted_eucalyptus_wood_hero_sec_2.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"  // Substitua pela URL real da imagem
     />
 
 
@@ -198,57 +202,56 @@ export default function PortfolioPage() {
             ))}
         </div>
       </div>
-
-      {/* Lightbox */}
-      {selectedProject !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-          <div className="relative max-w-5xl w-full mx-4">
-            <button
-              onClick={handleLightbox.close}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
-              aria-label="Fechar visualização"
-            >
-              <X className="h-8 w-8" />
-            </button>
+        {/* Lightbox */}
+        {selectedProject !== null && (
+          <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+            <div className="relative max-w-5xl w-full mx-4">
+              <button
+                onClick={handleLightbox.close}
+                className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
+                aria-label="Fechar visualização"
+              >
+                <X className="h-8 w-8" />
+              </button>
             
-            <div className="relative">
-              <Image 
-                className="mx-auto max-h-[80vh] object-contain"
-                src="{projects.find(p => p.id === selectedProject)?.images[currentImageIndex]}"
-                width={500}
-                height={500}
-                alt={`Imagem do projeto ${currentImageIndex + 1}`}
-              />
+              <div className="relative">
+                <Image 
+                  className="mx-auto max-h-[80vh] object-contain"
+                  src={projects.find(p => p.id === selectedProject)?.images[currentImageIndex] || ''}
+                  width={500}
+                  height={500}
+                  alt={`Imagem do projeto ${currentImageIndex + 1}`}
+                />
               
-              <div className="absolute left-4 right-4 top-1/2 -translate-y-1/2 flex justify-between">
-                <button
-                  onClick={handleLightbox.prev}
-                  className="bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-3 transform -translate-y-1/2"
-                  aria-label="Imagem anterior"
-                >
-                  <ChevronLeft className="h-8 w-8" />
-                </button>
-                <button
-                  onClick={handleLightbox.next}
-                  className="bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-3 transform -translate-y-1/2"
-                  aria-label="Próxima imagem"
-                >
-                  <ChevronRight className="h-8 w-8" />
-                </button>
+                <div className="absolute left-4 right-4 top-1/2 -translate-y-1/2 flex justify-between">
+                  <button
+                    onClick={handleLightbox.prev}
+                    className="bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-3 transform -translate-y-1/2"
+                    aria-label="Imagem anterior"
+                  >
+                    <ChevronLeft className="h-8 w-8" />
+                  </button>
+                  <button
+                    onClick={handleLightbox.next}
+                    className="bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-3 transform -translate-y-1/2"
+                    aria-label="Próxima imagem"
+                  >
+                    <ChevronRight className="h-8 w-8" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="text-white text-center mt-4">
+                <h3 className="text-xl font-bold">
+                  {projects.find(p => p.id === selectedProject)?.title}
+                </h3>
+                <p className="text-gray-300 mt-2">
+                  {projects.find(p => p.id === selectedProject)?.description}
+                </p>
               </div>
             </div>
-
-            <div className="text-white text-center mt-4">
-              <h3 className="text-xl font-bold">
-                {projects.find(p => p.id === selectedProject)?.title}
-              </h3>
-              <p className="text-gray-300 mt-2">
-                {projects.find(p => p.id === selectedProject)?.description}
-              </p>
-            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
   )
 }

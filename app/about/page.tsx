@@ -2,6 +2,7 @@
 import { Shield, TreePine, Leaf, Recycle } from 'lucide-react';
 //import { useState } from "react";
 import HeroSection from '../components/HeroSection';
+import Image from 'next/image';
 
 export default function AboutPage() {
 
@@ -33,25 +34,33 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="mt-12 lg:mt-0 grid grid-cols-2 gap-6">
-              <img
-                src="/api/placeholder/400/300"
-                alt="Produtos de madeira"
-                className="rounded-lg shadow-lg"
+              <Image  
+              src="https://i.ibb.co/0DFbhF8/3047930e-25a2-41fc-82bb-9b0dc8510be8.jpg"
+              width={400}
+              height={300}
+              alt="Imagem 1"
+              className="rounded-lg shadow-lg"
               />
-              <img
-                src="/api/placeholder/400/300"
-                alt="Processo de produção"
-                className="rounded-lg shadow-lg mt-8"
+              <Image  
+              src="https://i.ibb.co/DVx8pBd/24b45d0b-4c97-4bdf-9bad-f867a2562633.jpg"
+              width={400}
+              height={300}
+              alt="Imagem 1"
+              className="rounded-lg shadow-lg"
               />
-              <img
-                src="/api/placeholder/400/300"
-                alt="Sustentabilidade"
-                className="rounded-lg shadow-lg"
+              <Image  
+              src="https://i.ibb.co/0y8Q9jf/df7a8572-3d2d-407c-a71d-94190a020e05.jpg"
+              width={400}
+              height={300}
+              alt="Imagem 1"
+              className="rounded-lg shadow-lg"
               />
-              <img
-                src="/api/placeholder/400/300"
-                alt="Qualidade"
-                className="rounded-lg shadow-lg mt-8"
+              <Image  
+              src="https://i.ibb.co/2tfgK6x/30544550-0609-4b87-a8b6-848911746046.jpg"
+              width={400}
+              height={300}
+              alt="Imagem 1"
+              className="rounded-lg shadow-lg"
               />
             </div>
           </div>
