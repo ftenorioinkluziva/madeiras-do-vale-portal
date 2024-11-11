@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Mail, Phone, MapPin, Clock, MessageSquare, Building2, Truck } from "lucide-react"
-import Image from 'next/image'
+//import Image from 'next/image'
 import HeroSection from "../components/HeroSection"
 import CTAFinal from "../components/CTAFinal"
 
@@ -83,7 +83,8 @@ export default function ContactPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Formulário de Contato */}
+
+          {/* Informações de Contato */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Envie sua Mensagem</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -227,18 +228,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Mapa */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Nossa Localização</h3>
-              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                <Image className="w-full h-full object-cover"
-                  src="/api/placeholder/800/400"
-                  width={800}
-                  height={400}
-                  alt="Mapa de localização"
-                />
-              </div>
-            </div>
           </div>
 
           
